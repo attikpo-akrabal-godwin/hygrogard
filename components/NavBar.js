@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ComposantCouleur from './ComposantCouleur';
 
-const NavBar = ({ title }) => {
+const NavBar = ({ title ,lampe}) => {
   return (
     <View style={styles.navBar}>
       <Text style={styles.title}>{title}</Text>
+      <ComposantCouleur valeur={lampe} />
     </View>
   );
 };
