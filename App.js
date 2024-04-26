@@ -16,7 +16,7 @@ export default function App() {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [fooEvents, setFooEvents] = useState([]);
   const [lanpe,setLampe] = useState(true)
-  const [lines,setLines] = useState([0,0,0,0,0,0,0,0,0,0,0])
+  const [lines,setLines] = useState([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
   const [refreshing, setRefreshing] = useState(false);
   const maxvalue = 1024;
 
@@ -90,7 +90,7 @@ export default function App() {
           data={{
             datasets: [
               {
-                data: lines,
+                data: lines.slice(-10),
               }
             ]
           }}
