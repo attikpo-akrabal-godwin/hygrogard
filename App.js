@@ -90,7 +90,7 @@ export default function App() {
         }>
 
         {/* Section 1 */}
-        <Title title="Progress Circle" />
+        <Title color="skyblue" title="Progress Circle" />
         <Text style={styles.descriptionText}>
           Description of the progress circle displayed on bottom of this. Maybe not important.
         </Text>
@@ -103,7 +103,7 @@ export default function App() {
         </View>
 
         {/* Section 2 */}
-        <Title title="Line Chart" />
+        <Title color="lightgreen" title="Line Chart" />
         <Text style={styles.descriptionText}>
           Description of the Line chart displayed on bottom of this. Maybe not important.
         </Text>
@@ -136,13 +136,13 @@ export default function App() {
   );
 }
 
-const Title = ({ title }) => {
+const Title = ({ title, color }) => {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       <View style={{
         height: 12, width: 12,
         borderRadius: 12,
-        backgroundColor: "lightgreen", marginRight: 10
+        backgroundColor: color, marginRight: 10
       }}></View>
       <Text style={styles.titleText}>{title}</Text>
     </View>
