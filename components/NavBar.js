@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import ComposantCouleur from './ComposantCouleur';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import logo from '../assets/logo.jpg';
 
-const NavBar = ({ title, lampe }) => {
+const NavBar = ({ title, isconected }) => {
   return (
     <View style={styles.navBar}>
       <View style={styles.lampeContainer}>
+        <Image source={logo} style={styles.logo} />
         <Text style={styles.title}>{title}</Text>
       </View>
-      <View style={styles.userProfile}>
-        <ComposantCouleur valeur={lampe} />
+      <View style={{...styles.userProfile, backgroundColor: isconected ? 'green' : "red" }}>
       </View>
     </View>
   );
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   userProfile: {
-    height: 45,
-    width: 45,
+    height: 20,
+    width: 20,
     borderRadius: 45,
     borderWidth: 0.5,
     borderColor: "grey"
@@ -44,6 +44,11 @@ const styles = StyleSheet.create({
   lampeContainer: {
     flexDirection: "row",
     alignItems: "center"
+  },
+  logo: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain' // Ajuste l'image au conteneur
   }
 });
 
